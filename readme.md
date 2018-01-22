@@ -1,27 +1,53 @@
-# Laravel PHP Framework
+# Laravel ToDo App
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This is a simple ToDo app for Talenta exam by Cindy Yolanda Octavia.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+This is built on Laravel Framework 5.2.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Installation
 
-## Official Documentation
+Clone the repository-
+```
+git clone https://github.com/ndyoctav/talenta-backend.git
+```
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Then cd into the folder with this command-
+```
+cd talenta-backend
+```
 
-## Contributing
+Then do a composer install
+```
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Then create a environment file using this command-
+```
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Then edit `.env` file with appropriate credential for your database server. Just edit these two parameter(`DB_USERNAME`, `DB_PASSWORD`).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Then create a database named `talenta` and then do a database migration using this command-
+```
+php artisan migrate
+```
 
-## License
+Then change permission of storage folder using thins command-
+```
+(sudo) chmod 777 -R storage
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+At last generate application key, which will be used for password hashing, session and cookie encryption etc.
+```
+php artisan key:generate
+```
+
+## Run server
+
+Run server using this command-
+```
+php artisan serve
+```
+
+Then go to `http://localhost:8000` from your browser and see the app.
